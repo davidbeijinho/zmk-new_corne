@@ -95,10 +95,10 @@ U_UND   U_CUT       U_CPY       U_PST        U_RDO      &kp F24  &kp C_MUTE     
         layer_nav {
             display-name = "nav";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
+U_BOOT           &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  U_NA       &kp F24                               &mmv MOVE_UP                     &kp F24      U_RDO      U_PST        U_CPY       U_CUT            U_UND
+&kp LGUI         &kp LALT     &kp LCTRL      &kp LSHFT     U_NA       &kp F24               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT        &u_caps_word
+U_NA             &kp RALT     &u_to_U_NUM    &u_to_U_NAV   U_NA       &kp F24   &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24      &kp HOME   &kp PG_DN    &kp PG_UP   &kp END          &kp INS
+                                U_NA        U_NA        U_NA                                                                     &kp RET      &kp BSPC   &kp DEL
             >;
             sensor-bindings = <&scroll_encoder>;
         };
