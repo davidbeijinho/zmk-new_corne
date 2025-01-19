@@ -53,11 +53,6 @@
 
 #define U_TAPPING_TERM 200
 
-#define U_RDO &kp K_AGAIN
-#define U_PST &kp K_PASTE
-#define U_CPY &kp K_COPY
-#define U_CUT &kp K_CUT
-#define U_UND &kp K_UNDO
 
 // #define MIRYOKU_DOUBLE_TAP_GUARD(NAME, BINDING) \
 // / { \
@@ -77,17 +72,17 @@
 // #undef MIRYOKU_X
 
 
-#define MIRYOKU_SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
-/ { \
-  behaviors { \
-    NAME: NAME { \
-      compatible = "zmk,behavior-mod-morph"; \
-      #binding-cells = <0>; \
-      bindings = <BINDING>, <SHIFT_BINDING>; \
-      mods = <(MOD_LSFT|MOD_RSFT)>; \
-    }; \
-  }; \
-};
+// #define MIRYOKU_SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
+// / { \
+//   behaviors { \
+//     NAME: NAME { \
+//       compatible = "zmk,behavior-mod-morph"; \
+//       #binding-cells = <0>; \
+//       bindings = <BINDING>, <SHIFT_BINDING>; \
+//       mods = <(MOD_LSFT|MOD_RSFT)>; \
+//     }; \
+//   }; \
+// };
 
 // #define MIRYOKU_SHIFT_MACRO(NAME, BINDING, SHIFT_BINDING) \
 // U_MACRO(u_macro_ ## NAME, wait-ms = <0>; bindings = <SHIFT_BINDING>;) \
@@ -100,7 +95,7 @@
 // MIRYOKU_SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
 
 
-MIRYOKU_SHIFT_FUNCTION(u_out_tog, &out OUT_TOG, &out OUT_USB)
+// MIRYOKU_SHIFT_FUNCTION(u_out_tog, &out OUT_TOG, &out OUT_USB)
 
 / {
     behaviors {
@@ -216,7 +211,7 @@ U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24  &kp C_MUTE     
             bindings = <
 &kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24     &u_out_tog  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
+U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24     &out OUT_USB  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
                                       U_NA           U_NA  U_NA                                                                  &kp C_STOP  &kp C_PP    &kp C_MUTE
             >;
             sensor-bindings = <&scroll_encoder>;
@@ -248,7 +243,7 @@ U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE      
         layer_fun {
             display-name = "fun";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp F12          &kp F7      &kp F8      &kp F9       &kp PSCRN        &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &to U_BASE  &to U_EXTRA  &to U_TAP       &bootloader
 &kp F11          &kp F4      &kp F5      &kp F6       &kp SLCK         &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
 &kp F10          &kp F1      &kp F2      &kp F3       &kp PAUSE_BREAK  &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &to U_FUN   &to U_MEDIA  &kp RALT         U_NA  
                                 &kp K_APP   &kp SPACE   &kp TAB                                                                  U_NA         U_NA       U_NA              
