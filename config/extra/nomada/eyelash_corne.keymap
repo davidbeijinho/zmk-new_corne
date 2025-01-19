@@ -33,6 +33,7 @@
 #define U_MT(MOD, TAP) &u_mt MOD TAP
 #define U_LT(LAYER, TAP) &u_lt LAYER TAP
 
+
 #define U_BASE   0
 #define U_EXTRA  1
 #define U_TAP    2
@@ -44,6 +45,7 @@
 #define U_SYM    8
 #define U_FUN    9
 #define U_NOMADA 10
+
 
 / {
     behaviors {
