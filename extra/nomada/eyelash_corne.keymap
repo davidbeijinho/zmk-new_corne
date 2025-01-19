@@ -73,7 +73,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        laber_base {
+        layer_base {
             display-name = "base";
             bindings = <
 &kp Q           &kp W          &kp E               &kp R               &kp T  U_LT(U_NOMADA, A)                                 &kp UP                &kp F24           &kp Y              &kp U            &kp I           &kp O            &kp P
