@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #include <input/processors.dtsi>
 
@@ -52,7 +53,27 @@
 #define U_NOMADA 10
 
 #define U_TAPPING_TERM 200
+ 
+#define U_MS_D &kp KP_N2
+#define U_MS_L &kp KP_N4
+#define U_MS_R &kp KP_N6
+#define U_MS_U &kp KP_N8
+#define U_WH_D U_NU
+#define U_WH_L U_NU
+#define U_WH_R U_NU
+#define U_WH_U U_NU
 
+
+#define U_RGB_TOG &rgb_ug RGB_TOG
+#define U_RGB_EFF &rgb_ug RGB_EFF
+#define U_RGB_HUI &rgb_ug RGB_HUI
+#define U_RGB_SAI &rgb_ug RGB_SAI
+#define U_RGB_BRI &rgb_ug RGB_BRI
+#define U_EP_TOG &ext_power EP_TOG
+
+#define U_BTN1 &mkp MB1
+#define U_BTN2 &mkp MB2
+#define U_BTN3 &mkp MB3
 
 // #define MIRYOKU_DOUBLE_TAP_GUARD(NAME, BINDING) \
 // / { \
@@ -93,7 +114,7 @@
 // MIRYOKU_SHIFT_MACRO(u_bt_sel_2, &bt BT_SEL 2, &bt BT_SEL 2 &bt BT_CLR)
 // MIRYOKU_SHIFT_MACRO(u_bt_sel_3, &bt BT_SEL 3, &bt BT_SEL 3 &bt BT_CLR)
 // MIRYOKU_SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_CLR)
-
+// MIRYOKU_SHIFT_FUNCTION(u_caps_word, &caps_word, &kp CAPS)
 
 // MIRYOKU_SHIFT_FUNCTION(u_out_tog, &out OUT_TOG, &out OUT_USB)
 
@@ -120,6 +141,13 @@
             tapping-term-ms = <U_TAPPING_TERM>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
+        };
+
+        gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         };
 
     };
@@ -167,7 +195,7 @@ U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &k
             bindings = <
 &kp Q           &kp W  &kp E    &kp R      &kp T    &kp F24                              &mmv MOVE_UP                     &kp F24  &kp Y     &kp U    &kp I      &kp O    &kp P
 &kp A           &kp S  &kp D    &kp F      &kp G    &kp F24              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24  &kp H     &kp J    &kp K      &kp L    &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp Z           &kp X  &kp C    &kp V      &kp B    &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24  &kp N     &kp M    &kp COMMA  &kp DOT  &kp SLASH
                        &kp ESC  &kp SPACE  &kp TAB                                                                        &kp RET  &kp BSPC  &kp DEL
             >;
             sensor-bindings = <&scroll_encoder>;
@@ -177,9 +205,9 @@ U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &k
             display-name = "button";
             bindings = <
 U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24                              &mmv MOVE_UP                     &kp F24  U_RDO   U_PST      U_CPY      U_CUT    U_UND
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LGUI        &kp LALT  &kp LCTRL  &kp LSHFT  U_NU    &kp F24             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24  U_NU   &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24  U_RDO   U_PST      U_CPY      U_CUT    U_UND
-                             &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
+                               U_BTN3     U_BTN1  U_BTN2                                                                U_BTN2   U_BTN1  U_BTN3
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -187,10 +215,10 @@ U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24  &kp C_MUTE     
         layer_nav {
             display-name = "nav";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                             &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
+&bootloader          &to U_TAP  &to U_EXTRA  &to U_BASE  U_NA       &kp F24                               &mmv MOVE_UP                     &kp F24      U_RDO      U_PST        U_CPY       U_CUT            U_UND
+&kp LGUI        &kp LALT     &kp LCTRL      &kp LSHFT     U_NA       &kp F24               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      &kp LEFT   &kp DOWN     &kp UP      &kp RIGHT        &kp CAPS
+U_NA            &kp RALT     &to U_NUM    &to U_NAV   U_NA       &kp F24   &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24      &kp HOME   &kp PG_DN    &kp PG_UP   &kp END          &kp INS
+                                U_NA        U_NA        U_NA                                                                     &kp RET      &kp BSPC   &kp DEL
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -198,10 +226,10 @@ U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24  &kp C_MUTE     
         layer_mouse {
             display-name = "mouse";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                             &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
+&bootloader           &to U_TAP  &to U_EXTRA  &to U_BASE   U_NA  &kp F24                              &mmv MOVE_UP                     &kp F24  U_RDO    U_PST   U_CPY   U_CUT   U_UND
+&kp LGUI         &kp LALT     &kp LCTRL      &kp LSHFT      U_NA  &kp F24              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24  U_MS_L   U_MS_D  U_MS_U  U_MS_R  U_NU
+U_NA             &kp RALT     &to U_SYM    &to U_MOUSE  U_NA  &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24  U_WH_L   U_WH_D  U_WH_U  U_WH_R  U_NU
+                                      U_NA           U_NA  U_NA                                                                  U_BTN2   U_BTN1   U_BTN3
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -209,9 +237,9 @@ U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24  &kp C_MUTE     
         layer_media {
             display-name = "media";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24     &out OUT_USB  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3
+&bootloader    &to U_TAP  &to U_EXTRA  &to U_BASE   U_NA  &kp F24                              &mmv MOVE_UP                     &kp F24     U_RGB_TOG   U_RGB_EFF    U_RGB_HUI     U_RGB_SAI     U_RGB_BRI
+&kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT      U_NA  &kp F24              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24     U_EP_TOG    &kp C_PREV   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT
+U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24     &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3
                                       U_NA           U_NA  U_NA                                                                  &kp C_STOP  &kp C_PP    &kp C_MUTE
             >;
             sensor-bindings = <&scroll_encoder>;
@@ -220,10 +248,9 @@ U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE      
         layer_num {
             display-name = "num";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LBKT        &kp N7      &kp N8      &kp N9       &kp RBKT  &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &to U_BASE  &to U_EXTRA  &to U_TAP      &bootloader
 &kp SEMI        &kp N4      &kp N5      &kp N6       &kp EQUAL &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                &kp DOT     &kp N0      &kp MINUS                                                                U_NA         U_NA       U_NA              
+&kp GRAVE       &kp N1      &kp N2      &kp N3       &kp BSLH  &kp F24   &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24      U_NA       &to U_NUM   &to U_NAV    &kp RALT         U_NA                                  &kp DOT     &kp N0      &kp MINUS                                                                U_NA         U_NA       U_NA              
                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
             >;
             sensor-bindings = <&scroll_encoder>;
@@ -232,7 +259,7 @@ U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE      
         layer_sym {
             display-name = "sym";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LBRC        &kp AMPS    &kp ASTRK   &kp LPAR     &kp RBRC   &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &to U_BASE  &to U_EXTRA  &to U_TAP      &bootloader
 &kp COLON       &kp DLLR    &kp PRCNT   &kp CARET    &kp PLUS   &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
 &kp TILDE       &kp EXCL    &kp AT      &kp HASH     &kp PIPE   &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &to U_SYM   &to U_MOUSE  &kp RALT         U_NA  
                                 &kp LPAR    &kp RPAR    &kp UNDER                                                                U_NA         U_NA       U_NA              
@@ -243,7 +270,7 @@ U_NA      &kp RALT     &to U_FUN    &to U_MEDIA  U_NA  &kp F24  &kp C_MUTE      
         layer_fun {
             display-name = "fun";
             bindings = <
-&kp F12          &kp F7      &kp F8      &kp F9       &kp PSCRN        &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &to U_BASE  &to U_EXTRA  &to U_TAP       &bootloader
+&kp F12          &kp F7      &kp F8      &kp F9       &kp PSCRN        &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &to U_BASE  &to U_EXTRA  &to U_TAP      &bootloader
 &kp F11          &kp F4      &kp F5      &kp F6       &kp SLCK         &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
 &kp F10          &kp F1      &kp F2      &kp F3       &kp PAUSE_BREAK  &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &to U_FUN   &to U_MEDIA  &kp RALT         U_NA  
                                 &kp K_APP   &kp SPACE   &kp TAB                                                                  U_NA         U_NA       U_NA              
