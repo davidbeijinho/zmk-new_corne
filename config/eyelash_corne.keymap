@@ -116,7 +116,7 @@
             >;
             sensor-bindings = <&scroll_encoder>;
         };
-    };
+
         layer_nomada {
             display-name = "nomada";
             bindings = <
