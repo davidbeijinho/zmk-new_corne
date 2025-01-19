@@ -210,10 +210,10 @@ U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &k
         layer_nomada {
             display-name = "nomada";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                             &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
+&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3   &trans                                       &mmv MOVE_UP                     &bootloader      &sys_reset       &kp F24          &kp F24          &kp F24  &kp F24
+&studio_unlock  &kp BT_SEL 4     &kp BT_SEL 5    &kp F24       &kp F24        &trans                       &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24          &kp F24          &kp F24          &kp F24          &kp F24  &kp F24
+&kp F24         &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &kp F24       &kp F24        &rgb_ug RGB_EFF  &kp C_MUTE                  &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp F24  &kp F24
+                                                 &kp F24       &kp F24        &kp F24                                                                       &kp F24          &kp F24          &kp F24
             >;
             sensor-bindings = <&scroll_encoder>;
         };
