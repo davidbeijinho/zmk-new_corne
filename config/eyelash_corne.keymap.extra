@@ -106,10 +106,10 @@ U_NA             &kp RALT     &u_to_U_NUM    &u_to_U_NAV   U_NA       &kp F24   
         layer_mouse {
             display-name = "mouse";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
+U_BOOT           &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE   U_NA       &kp F24                                 &mmv MOVE_UP                     &kp F24      U_RDO      U_PST        U_CPY       U_CUT            U_UND
+&kp LGUI         &kp LALT     &kp LCTRL      &kp LSHFT      U_NA       &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_MS_L     U_MS_D       U_MS_U      U_MS_R           U_NU
+U_NA             &kp RALT     &u_to_U_SYM    &u_to_U_MOUSE  U_NA       &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_WH_L     U_WH_D       U_WH_U      U_WH_R           U_NU
+                                U_NA        U_NA        U_NA                                                                     U_BTN2       U_BTN1     U_BTN3
             >;
             sensor-bindings = <&scroll_encoder>;
         };
