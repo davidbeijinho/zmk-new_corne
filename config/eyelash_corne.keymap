@@ -48,6 +48,12 @@
 
 #define U_TAPPING_TERM 200
 
+#define U_RDO &kp K_AGAIN
+#define U_PST &kp K_PASTE
+#define U_CPY &kp K_COPY
+#define U_CUT &kp K_CUT
+#define U_UND &kp K_UNDO
+
 / {
     behaviors {
         td0: td0 {
