@@ -43,6 +43,7 @@
 #define U_NUM    7
 #define U_SYM    8
 #define U_FUN    9
+#define U_NOMADA 10
 
 / {
     behaviors {
@@ -73,10 +74,10 @@
         laber_base {
             display-name = "base";
             bindings = <
-&kp Q           &kp W          &kp E               &kp R               &kp T  &kp F24                               &kp UP                &kp F24           &kp Y              &kp U            &kp I           &kp O            &kp P
-U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &kp F24                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp F24           &kp H              U_MT(LSHFT, J)   U_MT(LCTRL, K)  U_MT(LALT, L)    U_MT(LGUI, SQT)
+&kp Q           &kp W          &kp E               &kp R               &kp T  U_LT(U_NOMADA, A)                                 &kp UP                &kp F24           &kp Y              &kp U            &kp I           &kp O            &kp P
+U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  U_MT(U_NOMADA, A)                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp F24           &kp H              U_MT(LSHFT, J)   U_MT(LCTRL, K)  U_MT(LALT, L)    U_MT(LGUI, SQT)
 &lt U_BUTTON Z  U_MT(RALT, X)  &kp C               &kp V               &kp B  &kp F24     &kp C_MUTE                &kp DOWN              &kp F24           &kp N              &kp M            &kp COMMA       U_MT(RALT, DOT)  &lt U_BUTTON SLASH
-                               U_LT(U_MEDIA, ESC)  U_LT(U_NAV, SPACE)  U_LT(U_MOUSE TAB)                                                  U_LT(U_SYM, RET)  U_LT(U_NUM, BSPC)  U_LT(U_FUN, DEL)
+                               U_LT(U_MEDIA, ESC)  U_LT(U_NAV, SPACE)  U_LT(U_MOUSE, TAB)                                                  U_LT(U_SYM, RET)  U_LT(U_NUM, BSPC)  U_LT(U_FUN, DEL)
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -87,7 +88,7 @@ U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &k
 &kp Q           &kp W          &kp E               &kp R               &kp T  &kp F24                               &kp UP                &kp F24           &kp Y              &kp U            &kp I           &kp O            &kp P
 U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &kp F24                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp F24           &kp H              U_MT(LSHFT, J)   U_MT(LCTRL, K)  U_MT(LALT, L)    U_MT(LGUI, SQT)
 &lt U_BUTTON Z  U_MT(RALT, X)  &kp C               &kp V               &kp B  &kp F24     &kp C_MUTE                &kp DOWN              &kp F24           &kp N              &kp M            &kp COMMA       U_MT(RALT, DOT)  &lt U_BUTTON SLASH
-                               U_LT(U_MEDIA, ESC)  U_LT(U_NAV, SPACE)  U_LT(U_MOUSE TAB)                                                  U_LT(U_SYM, RET)  U_LT(U_NUM, BSPC)  U_LT(U_FUN, DEL)
+                               U_LT(U_MEDIA, ESC)  U_LT(U_NAV, SPACE)  U_LT(U_MOUSE, TAB)                                                  U_LT(U_SYM, RET)  U_LT(U_NUM, BSPC)  U_LT(U_FUN, DEL)
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -177,6 +178,17 @@ U_NA      &kp RALT     &u_to_U_FUN    &u_to_U_MEDIA  U_NA  &kp F24  &kp C_MUTE  
 &kp F11          &kp F4      &kp F5      &kp F6       &kp SLCK         &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
 &kp F10          &kp F1      &kp F2      &kp F3       &kp PAUSE_BREAK  &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_FUN   &u_to_U_MEDIA  &kp RALT         U_NA  
                                 &kp K_APP   &kp SPACE   &kp TAB                                                                  U_NA         U_NA       U_NA              
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        layer_fun {
+            display-name = "nomada";
+            bindings = <
+&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3   &trans                                       &mmv MOVE_UP                     &bootloader      &sys_reset       &kp F24          &kp F24          &kp F24  &kp F24
+&studio_unlock  &kp BT_SEL 4     &kp BT_SEL 5    &kp F24       &kp F24        &trans                       &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24          &kp F24          &kp F24          &kp F24          &kp F24  &kp F24
+&kp F24         &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &kp F24       &kp F24        &rgb_ug RGB_EFF  &kp C_MUTE                  &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp F24  &kp F24
+                                                 &kp F24       &kp F24        &kp F24                                                                       &kp F24          &kp F24          &kp F24
             >;
             sensor-bindings = <&scroll_encoder>;
         };
