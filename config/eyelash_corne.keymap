@@ -22,6 +22,28 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
+#define U_RDO &kp K_AGAIN
+#define U_PST &kp K_PASTE
+#define U_CPY &kp K_COPY
+#define U_CUT &kp K_CUT
+#define U_UND &kp K_UNDO
+
+
+#define U_MT(MOD, TAP) &u_mt MOD TAP
+#define U_LT(LAYER, TAP) &u_lt LAYER TAP
+
+#define U_BASE   0
+#define U_EXTRA  1
+#define U_TAP    2
+#define U_BUTTON 3
+#define U_NAV    4
+#define U_MOUSE  5
+#define U_MEDIA  6
+#define U_NUM    7
+#define U_SYM    8
+#define U_FUN    9
+#define U_NOMADA 10
+
 / {
     behaviors {
         td0: td0 {
