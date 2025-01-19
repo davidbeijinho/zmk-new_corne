@@ -100,7 +100,7 @@ U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &k
             bindings = <
 &kp Q           &kp W  &kp E    &kp R      &kp T    &kp F24                              &mmv MOVE_UP                     &kp F24  &kp Y     &kp U    &kp I      &kp O    &kp P
 &kp A           &kp S  &kp D    &kp F      &kp G    &kp F24              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24  &kp H     &kp J    &kp K      &kp L    &kp SQT
-&kp Z           &kp X  &kp C    &kp V      &kp B    &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24  &kp N     &kp M    &kp COMMA  &kp DOT  kp SLASH
+&kp Z           &kp X  &kp C    &kp V      &kp B    &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24  &kp N     &kp M    &kp COMMA  &kp DOT  &kp SLASH
                        &kp ESC  &kp SPACE  &kp TAB                                                                        &kp RET  &kp BSPC  &kp DEL
             >;
             sensor-bindings = <&scroll_encoder>;
@@ -110,7 +110,7 @@ U_MT(LGUI, A)   U_MT(LALT, S)  U_MT(LCTRL, D)      U_MT(LSHFT, F)      &kp G  &k
             display-name = "button";
             bindings = <
 U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24                              &mmv MOVE_UP                     &kp F24  U_RDO   U_PST      U_CPY      U_CUT    U_UND
-&kp LGUI        &kp LALT  &kp LCTRL  &kp LSHFT  U_NU    &kp F24              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24  U_NU    &kp LSHFT  &kp LCTRL  kp LALT  &kp LGUI
+&kp LGUI        &kp LALT  &kp LCTRL  &kp LSHFT  U_NU    &kp F24              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24  U_NU    &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 U_UND           U_CUT     U_CPY      U_PST      U_RDO   &kp F24  &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24  U_RDO   U_PST      U_CPY      U_CUT    U_UND
                                U_BTN3     U_BTN1  U_BTN2                                                                U_BTN2   U_BTN1  U_BTN3
             >;
