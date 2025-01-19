@@ -117,18 +117,6 @@
             sensor-bindings = <&scroll_encoder>;
         };
     };
-
-        layer_fun {
-            display-name = "fun";
-            bindings = <
-&kp F12          &kp F7      &kp F8      &kp F9       &kp PSCRN        &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &u_to_U_BASE  &u_to_U_EXTRA  &u_to_U_TAP      U_BOOT
-&kp F11          &kp F4      &kp F5      &kp F6       &kp SLCK         &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
-&kp F10          &kp F1      &kp F2      &kp F3       &kp PAUSE_BREAK  &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_FUN   &u_to_U_MEDIA  &kp RALT         U_NA  
-                                &kp K_APP   &kp SPACE   &kp TAB                                                                  U_NA         U_NA       U_NA              
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
-
         layer_nomada {
             display-name = "nomada";
             bindings = <
