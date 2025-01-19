@@ -117,15 +117,5 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
-        layer_nomada {
-            display-name = "nomada";
-            bindings = <
-&bt BT_CLR_ALL  &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3   &trans                                       &mmv MOVE_UP                     &bootloader      &sys_reset       &kp F24          &kp F24          &kp F24  &kp F24
-&studio_unlock  &kp BT_SEL 4     &kp BT_SEL 5    &kp F24       &kp F24        &trans                       &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24          &kp F24          &kp F24          &kp F24          &kp F24  &kp F24
-&kp F24         &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &kp F24       &kp F24        &rgb_ug RGB_EFF  &kp C_MUTE                  &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp F24  &kp F24
-                                                 &kp F24       &kp F24        &kp F24                                                                       &kp F24          &kp F24          &kp F24
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
     };
 };
