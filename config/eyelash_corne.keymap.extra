@@ -128,9 +128,10 @@ U_NA             &kp RALT     &u_to_U_FUN    &u_to_U_MEDIA  U_NA       &kp F24  
         layer_num {
             display-name = "num";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&kp LBKT        &kp N7      &kp N8      &kp N9       &kp RBKT  &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &u_to_U_BASE  &u_to_U_EXTRA  &u_to_U_TAP      U_BOOT
+&kp SEMI        &kp N4      &kp N5      &kp N6       &kp EQUAL &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
+&kp GRAVE       &kp N1      &kp N2      &kp N3       &kp BSLH  &kp F24   &kp C_MUT  E                  &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_NUM   &u_to_U_NAV    &kp RALT         U_NA  
+                                &kp DOT     &kp N0      &kp MINUS                                                                U_NA         U_NA       U_NA              
                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
             >;
             sensor-bindings = <&scroll_encoder>;
@@ -139,10 +140,10 @@ U_NA             &kp RALT     &u_to_U_FUN    &u_to_U_MEDIA  U_NA       &kp F24  
         layer_sym {
             display-name = "sym";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
+&kp LBRC        &kp AMPS    &kp ASTRK   &kp LPAR     &kp RBRC   &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &u_to_U_BASE  &u_to_U_EXTRA  &u_to_U_TAP      U_BOOT
+&kp COLON       &kp DLLR    &kp PRCNT   &kp CARET    &kp PLUS   &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
+&kp TILDE       &kp EXCL    &kp AT      &kp HASH     &kp PIPE   &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_SYM   &u_to_U_MOUSE  &kp RALT         U_NA  
+                                &kp LPAR    &kp RPAR    &kp UNDER                                                                U_NA         U_NA       U_NA              
             >;
             sensor-bindings = <&scroll_encoder>;
         };
@@ -150,10 +151,10 @@ U_NA             &kp RALT     &u_to_U_FUN    &u_to_U_MEDIA  U_NA       &kp F24  
         layer_fun {
             display-name = "fun";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
+&kp F12          &kp F7      &kp F8      &kp F9       &kp PSCRN        &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &u_to_U_BASE  &u_to_U_EXTRA  &u_to_U_TAP      U_BOOT
+&kp F11          &kp F4      &kp F5      &kp F6       &kp SLCK         &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
+&kp F10          &kp F1      &kp F2      &kp F3       &kp PAUSE_BREAK  &kp F24   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_FUN   &u_to_U_MEDIA  &kp RALT         U_NA  
+                                &kp K_APP   &kp SPACE   &kp TAB                                                                  U_NA         U_NA       U_NA              
             >;
             sensor-bindings = <&scroll_encoder>;
         };
