@@ -41,8 +41,19 @@ podman run -it --rm \
 
 west build -b eyelash_corne_left
 
-
 west build -b eyelash_corne_left -- -DSHIELD=nice_view
+
+
+west build -b eyelash_corne_left -- -DSHIELD=nice_view -DZMK_CONFIG=/workspaces/zmk-config
+
+west build -b eyelash_corne_left -- -DZMK_CONFIG=/workspaces/zmk-config"
+
+west build -d build/left -b eyelash_corne_left -- "-DSHIELD=nice_view -DZMK_CONFIG=/workspaces/zmk-config"
+
+
+west build -s zmk/app -d "/tmp/tmp.vS2o3LPaoc" -b "eyelash_corne_left"  -- -DZMK_CONFIG=/tmp/zmk-config/config -DSHIELD="nice_view" -DZMK_EXTRA_MODULES='/__w/zmk-new_corne/zmk-new_corne' 
+
+west build -s /workspaces/zmk/app -b "eyelash_corne_left"  -- -DZMK_CONFIG=/workspaces/zmk-config -DSHIELD="nice_view"
 
 west build -b eyelash_corne_left -- -DSHIELD=nice_view
 ```
