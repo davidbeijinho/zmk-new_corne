@@ -155,7 +155,7 @@ U_NA      &kp RALT     &u_to_U_FUN    &u_to_U_MEDIA  U_NA  &kp F24  &kp C_MUTE  
             bindings = <
 &kp LBKT        &kp N7      &kp N8      &kp N9       &kp RBKT  &kp F24                                 &mmv MOVE_UP                     &kp F24      U_NA       &u_to_U_BASE  &u_to_U_EXTRA  &u_to_U_TAP      U_BOOT
 &kp SEMI        &kp N4      &kp N5      &kp N6       &kp EQUAL &kp F24                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp F24      U_NA       &kp LSHFT     &kp LCTRL      &kp LALT         &kp LGUI
-&kp GRAVE       &kp N1      &kp N2      &kp N3       &kp BSLH  &kp F24   &kp C_MUT  E                  &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_NUM   &u_to_U_NAV    &kp RALT         U_NA  
+&kp GRAVE       &kp N1      &kp N2      &kp N3       &kp BSLH  &kp F24   &kp C_MUTE                  &mmv MOVE_DOWN                   &kp F24      U_NA       &u_to_U_NUM   &u_to_U_NAV    &kp RALT         U_NA  
                                 &kp DOT     &kp N0      &kp MINUS                                                                U_NA         U_NA       U_NA              
                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
             >;
