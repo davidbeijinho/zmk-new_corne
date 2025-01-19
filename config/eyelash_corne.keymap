@@ -46,6 +46,7 @@
 #define U_FUN    9
 #define U_NOMADA 10
 
+#define U_TAPPING_TERM 200
 
 / {
     behaviors {
